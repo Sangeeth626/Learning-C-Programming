@@ -427,3 +427,166 @@ int main()
 
 
 
+
+// 8. Playing with characters
+/*#include <stdio.h>
+#include <string.h>
+
+int main() 
+{
+    char str1[20], str2[20], str3[20];
+    
+    printf("Enter the first string : ") ;
+    fgets(str1, sizeof(str1), stdin) ;
+    str1[strcspn(str1, "\n")] = '\0' ;
+    
+    printf("Enter the second string : ") ;
+    fgets(str2, sizeof(str2), stdin) ;
+    str2[strcspn(str2, "\n")] = '\0' ;
+    
+    printf("Enter the third string : ") ;
+    fgets(str3, sizeof(str3), stdin) ;
+    str3[strcspn(str3, "\n")] = '\0' ;
+    
+    printf("%s\n", str1);
+    printf("%s\n", str2);
+    printf("%s\n", str3);
+    
+    return 0;
+}*/
+
+
+
+// 9. Pattern printing
+/*#include<stdio.h>
+int main()
+{
+    int n ;
+    printf("Enter a number : ");
+    scanf("%d", &n);
+    for(int i=1 ; i<=n ; i++)
+    {
+        for(int j=1 ; j<=n ; j++)
+        {
+            if(i==1)
+            {
+                printf("%d", n);
+            }
+        }
+        printf("\n");
+    }
+    return 0 ;
+}*/
+
+
+
+// 10. Students marks sum
+
+/*#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int marks_summation(int* marks, int number_of_students, char gender) ;
+
+int main() {
+    int number_of_students;
+    char gender;
+    int sum;
+  
+    scanf("%d", &number_of_students);
+    int *marks = (int *) malloc(number_of_students * sizeof (int));
+ 
+    for (int student = 0; student < number_of_students; student++) {
+        scanf("%d", (marks + student));
+    }
+    
+    scanf(" %c", &gender);
+
+    sum = marks_summation(marks, number_of_students, gender);
+
+    printf("%d", sum);
+    free(marks);
+ 
+    return 0;
+}
+    
+int marks_summation(int* marks, int number_of_students, char gender) 
+{
+    int sum=0 ; 
+    
+    if(gender == 'g')
+    {
+        for(int i=1 ; i< number_of_students ; i+=2)         // note : we should note use sizeof(marks) , because In C, when you pass an array to a function, it decays into a pointer. Therefore, sizeof(marks) does not give you the size of the array; it gives you the size of the pointer (usually 4 or 8 bytes depending on your system)
+        {
+            sum += marks[i] ;
+        }
+    }
+
+    if(gender == 'b')
+    {
+        for(int i=0 ; i< number_of_students ; i+=2)
+        {
+            sum += marks[i] ;
+        }
+    }
+    return sum ;
+}*/
+
+
+
+// 11. 1D array in C
+/*#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n, sum=0;
+    int* arr ;
+    
+    scanf("%d", &n);
+    arr = (int *)malloc(n * sizeof(n));
+    
+    for(int i=0 ; i<n ; i++)
+    {
+        scanf("%d",(arr+i));
+    }
+
+    for(int i=0 ; i<n ; i++)
+    {
+        sum+=arr[i]; 
+    }
+    
+    printf("%d", sum);
+    
+    free(arr) ;
+    return 0;
+}*/
+
+
+
+// 12. Reversing array elements
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num, *arr, i;
+    scanf("%d", &num);
+    arr = (int*) malloc(num * sizeof(int));
+    for(i = 0; i < num; i++) {
+        scanf("%d", arr + i);
+    }
+
+    for(int i=0 ; i<num ; i++)
+    {
+        arr[i] = arr[num-i] ;
+        printf("%d", arr[i]);
+    }
+
+    for(i = 0; i < num; i++)
+        printf("%d ", *(arr + i));
+    return 0;
+}
