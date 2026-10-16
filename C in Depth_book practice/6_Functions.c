@@ -496,4 +496,47 @@ int get_binary(int n)
 
 
 
-// 
+// 23. Write a function that inputs binary or octal number and convert it into decimal
+/*#include<stdio.h>
+
+int getDecimal(long int b);
+
+int main()
+{
+    long int b, n, o;
+    printf("Enter the number in binary : ") ;
+    scanf("%d", &b);
+
+    n = getDecimal(b);
+
+    printf("In decimal : %d\n", n);
+    printf("In octal   : %o\n", n) ;
+
+    return 0 ;
+}
+
+int getDecimal(long int b)
+{
+    int rem, n, i=0, j, sum=0;
+
+    while(b!=0)
+    {
+        rem = b%10 ;
+
+        for(j=0 ; j<=i ; j++)
+        {
+            if(j==0)
+            {
+                n = rem * 1 ;
+                continue; ;
+            }
+            n = rem * 2*n ;
+        }
+
+        sum += n ;
+        b = b/10 ;
+        i++ ;
+    }
+
+    return sum ;
+}*/
