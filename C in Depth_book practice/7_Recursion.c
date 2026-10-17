@@ -98,7 +98,7 @@ int DisplaySum(int n)
 
 
 // 4. Find the sum of digit of the number 
-#include<stdio.h>
+/*#include<stdio.h>
 
 int SOD(int n);
 int DisplayDigit(int n) ;
@@ -139,6 +139,6 @@ int DisplayDigit(int n)
     {
         return (DisplayDigit(n/10)) ;
     }
-}
+}*/
 
 // 5. 
